@@ -6,11 +6,9 @@ import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL15;
 import org.lwjgl.opengl.GL44;
 
-import com.google.common.annotations.Beta;
 import com.gtnewhorizon.gtnhlib.client.renderer.vbo.IVertexBuffer;
 import com.gtnewhorizon.gtnhlib.client.renderer.vertex.VertexFormat;
 
-@Beta
 public final class VertexBufferStorage implements IVertexBuffer {
 
     private int id;

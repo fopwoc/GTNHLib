@@ -59,3 +59,5 @@ Keep this list current. One line per file or group: what changed and why.
 - `IVertexBuffer`: LWJGL3 `glMultMatrixf`.
 - `CheckIntrinsics.NewDirectByteBuffer`: uses LWJGL3 `MemoryUtil.memByteBuffer`; the private Java 8 constructor
   is absent on current JDKs.
+- `DirectTessellator`, `VertexArrayUnsupported`, `VertexBufferStorage`, `VertexFormatElement`: removed Guava's
+  informational `@Beta` annotations so the built subset has no Guava dependency.

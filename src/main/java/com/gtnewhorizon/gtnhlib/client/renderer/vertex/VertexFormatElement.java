@@ -7,7 +7,6 @@ import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL13;
 import org.lwjgl.opengl.GL20;
 
-import com.google.common.annotations.Beta;
 import com.gtnewhorizon.gtnhlib.client.renderer.vertex.writers.IVertexAttributeWriter;
 
 import lombok.Getter;
@@ -20,7 +19,6 @@ public class VertexFormatElement {
     protected final int index;
     protected final int count;
     protected final int byteSize;
-    @Beta
     protected final @NotNull IVertexAttributeWriter writer;
     protected final int vertexBit;
 

@@ -6,7 +6,6 @@ import java.nio.ByteBuffer;
 
 import org.lwjgl.opengl.GL11;
 
-import com.google.common.annotations.Beta;
 import com.gtnewhorizon.gtnhlib.client.renderer.vao.IVertexArrayObject;
 import com.gtnewhorizon.gtnhlib.client.renderer.vao.IndexBuffer;
 import com.gtnewhorizon.gtnhlib.client.renderer.vao.VertexBufferType;
@@ -357,7 +356,6 @@ public class DirectTessellator extends Tessellator {
     /**
      * Uploads the data to the VBO & uploads the needed indices to the EBO.
      */
-    @Beta // May change in the future
     public final void allocateToVBO(IVertexArrayObject vao, IndexBuffer ebo) {
         vao.getVBO().allocate(getWriteBuffer(), this.vertexCount / 4 * 6);
         ebo.upload(vertexCount);
