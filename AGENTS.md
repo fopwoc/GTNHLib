@@ -57,3 +57,5 @@ Keep this list current. One line per file or group: what changed and why.
 - `MemoryUtilities`: LWJGL3 `PointerBuffer.create` and `address`.
 - `Pointer`: pointer size from LWJGL3's `org.lwjgl.system.Pointer`.
 - `IVertexBuffer`: LWJGL3 `glMultMatrixf`.
+- `CheckIntrinsics.NewDirectByteBuffer`: uses LWJGL3 `MemoryUtil.memByteBuffer`; the private Java 8 constructor
+  is absent on current JDKs.

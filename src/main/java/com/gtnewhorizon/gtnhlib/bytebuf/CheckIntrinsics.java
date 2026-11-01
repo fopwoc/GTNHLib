@@ -3,7 +3,7 @@
  */
 package com.gtnewhorizon.gtnhlib.bytebuf;
 
-import java.lang.reflect.Constructor;
+import org.lwjgl.system.MemoryUtil;
 import java.nio.ByteBuffer;
 
 /**
@@ -43,17 +43,7 @@ public final class CheckIntrinsics {
     }
 
     public static ByteBuffer NewDirectByteBuffer(long address, int capacity) {
-        try {
-            // Should work on OpenJDK 8 and OpenJ9 8
-            @SuppressWarnings("unchecked")
-            final Class<? extends ByteBuffer> dbb = (Class<? extends ByteBuffer>) Class
-                    .forName("java.nio.DirectByteBuffer");
-            final Constructor<? extends ByteBuffer> newDbb = dbb.getDeclaredConstructor(long.class, int.class);
-            newDbb.setAccessible(true);
-            return newDbb.newInstance(address, capacity);
-        } catch (Throwable t) {
-            throw new RuntimeException(t);
-        }
+        return MemoryUtil.memByteBuffer(address, capacity);
     }
 
     public static MemoryUtilities.MemoryAllocator getLwjgl3ifyAllocator() {
