@@ -1,6 +1,6 @@
 package com.gtnewhorizon.gtnhlib.client.renderer.vertex;
 
-import net.minecraft.client.renderer.Tessellator;
+import com.gtnewhorizon.gtnhlib.client.renderer.Tessellator;
 
 public final class VertexFlags {
 

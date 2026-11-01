@@ -1,9 +1,9 @@
 package com.gtnewhorizon.gtnhlib.client.opengl;
 
-import org.lwjgl.opengl.ContextCapabilities;
 import org.lwjgl.opengl.EXTFramebufferObject;
 import org.lwjgl.opengl.GL30;
-import org.lwjgl.opengl.GLContext;
+import org.lwjgl.opengl.GL;
+import org.lwjgl.opengl.GLCapabilities;
 
 import com.gtnewhorizon.gtnhlib.client.renderer.vao.VaoFunctions;
 
@@ -29,7 +29,7 @@ public final class GLCaps {
     }
 
     static {
-        ContextCapabilities caps = GLContext.getCapabilities();
+        GLCapabilities caps = GL.getCapabilities();
         bufferStorage = caps.OpenGL44 || caps.GL_ARB_buffer_storage;
         texStorage = caps.OpenGL42 || caps.GL_ARB_texture_storage;
 

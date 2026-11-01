@@ -7,7 +7,7 @@ import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.List;
 
-import net.minecraft.client.renderer.Tessellator;
+import com.gtnewhorizon.gtnhlib.client.renderer.Tessellator;
 
 import org.joml.Matrix4fc;
 import org.joml.Vector3f;

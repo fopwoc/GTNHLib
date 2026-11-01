@@ -9,7 +9,6 @@ import static com.gtnewhorizon.gtnhlib.bytebuf.MemoryUtilities.NULL;
 import org.apache.commons.lang3.SystemUtils;
 import org.jetbrains.annotations.Nullable;
 import org.lwjgl.PointerBuffer;
-import org.lwjgl.Sys;
 
 /**
  * Pointer interface.
@@ -29,7 +28,7 @@ import org.lwjgl.Sys;
 public interface Pointer {
 
     /** The pointer size in bytes. Will be 4 on a 32bit JVM and 8 on a 64bit one. */
-    int POINTER_SIZE = Sys.is64Bit() ? 8 : 4;
+    int POINTER_SIZE = org.lwjgl.system.Pointer.POINTER_SIZE;
 
     /** The pointer size power-of-two. Will be 2 on a 32bit JVM and 3 on a 64bit one. */
     int POINTER_SHIFT = POINTER_SIZE == 8 ? 3 : 2;

@@ -6,17 +6,13 @@ package com.gtnewhorizon.gtnhlib.bytebuf;
 import static com.gtnewhorizon.gtnhlib.bytebuf.MemoryUtilities.MemoryAllocator;
 import static com.gtnewhorizon.gtnhlib.bytebuf.MemoryUtilities.getUnsafeInstance;
 
-import net.minecraft.launchwrapper.Launch;
-
 /** Provides {@link MemoryAllocator} implementations for {@link MemoryUtilities} to use. */
 final class MemoryManage {
 
     private MemoryManage() {}
 
     static MemoryAllocator getInstance() {
-        final boolean hasLwjgl3ify = Launch.blackboard != null
-                && Launch.blackboard.get("lwjgl3ify:rfb-booted") == Boolean.TRUE;
-        return hasLwjgl3ify ? CheckIntrinsics.getLwjgl3ifyAllocator() : new StdlibAllocator();
+        return new StdlibAllocator();
     }
 
     /** stdlib memory allocator. */

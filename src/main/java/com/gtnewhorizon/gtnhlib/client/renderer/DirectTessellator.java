@@ -4,9 +4,6 @@ import static com.gtnewhorizon.gtnhlib.bytebuf.MemoryUtilities.*;
 
 import java.nio.ByteBuffer;
 
-import net.minecraft.client.renderer.Tessellator;
-import net.minecraft.client.shader.TesselatorVertexState;
-
 import org.lwjgl.opengl.GL11;
 
 import com.google.common.annotations.Beta;
@@ -70,7 +67,7 @@ public class DirectTessellator extends Tessellator {
     }
 
     public final void syncTessellator(Tessellator other) {
-        if (!other.isDrawing || other.vertexCount == 0) return; // Not drawing, nothing to sync
+        if (other == null || !other.isDrawing || other.vertexCount == 0) return; // Not drawing, nothing to sync
 
         // Cannot merge when both tessellators are drawing with different draw mode
         if (this.isDrawing && other.drawMode != this.drawMode) {
@@ -497,16 +494,6 @@ public class DirectTessellator extends Tessellator {
 
     public final int getDrawMode() {
         return this.drawMode;
-    }
-
-    @Override
-    public final TesselatorVertexState getVertexState(float p_147564_1_, float p_147564_2_, float p_147564_3_) {
-        throw new UnsupportedOperationException("getVertexState not supported for DirectTessellator!");
-    }
-
-    @Override
-    public final void setVertexState(TesselatorVertexState p_147565_1_) {
-        throw new UnsupportedOperationException("setVertexState not supported for DirectTessellator!");
     }
 
     protected void onRemovedFromStack() {

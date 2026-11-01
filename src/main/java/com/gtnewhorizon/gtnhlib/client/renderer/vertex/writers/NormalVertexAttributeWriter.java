@@ -3,7 +3,7 @@ package com.gtnewhorizon.gtnhlib.client.renderer.vertex.writers;
 import static com.gtnewhorizon.gtnhlib.bytebuf.MemoryUtilities.*;
 import static com.gtnewhorizon.gtnhlib.client.renderer.cel.util.ModelQuadUtil.*;
 
-import net.minecraft.client.renderer.Tessellator;
+import com.gtnewhorizon.gtnhlib.client.renderer.Tessellator;
 
 import org.joml.Matrix4fc;
 import org.joml.Vector3f;

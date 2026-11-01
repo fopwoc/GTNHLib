@@ -1,6 +1,6 @@
 package com.gtnewhorizon.gtnhlib.client.model;
 
-import net.minecraft.client.renderer.Tessellator;
+import com.gtnewhorizon.gtnhlib.client.renderer.Tessellator;
 
 import org.joml.Matrix3f;
 import org.joml.Matrix4f;

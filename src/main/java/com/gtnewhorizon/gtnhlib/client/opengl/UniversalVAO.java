@@ -5,10 +5,10 @@ import java.nio.IntBuffer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.lwjgl.opengl.APPLEVertexArrayObject;
-import org.lwjgl.opengl.ContextCapabilities;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL30;
-import org.lwjgl.opengl.GLContext;
+import org.lwjgl.opengl.GL;
+import org.lwjgl.opengl.GLCapabilities;
 
 import com.gtnewhorizon.gtnhlib.client.renderer.vao.VaoFunctions;
 
@@ -26,7 +26,7 @@ public final class UniversalVAO {
     /**
      * Returns the implementation based on the ContextCapabilities.
      */
-    public static VaoFunctions getImplementation(ContextCapabilities caps) {
+    public static VaoFunctions getImplementation(GLCapabilities caps) {
         if (caps.OpenGL30) {
             return new VaoGL3();
         } else if (caps.GL_APPLE_vertex_array_object) {
@@ -140,7 +140,7 @@ public final class UniversalVAO {
     }
 
     private static final ThreadLocal<VaoFunctions> FUNCTIONS = ThreadLocal
-            .withInitial(() -> getImplementation(GLContext.getCapabilities()));
+            .withInitial(() -> getImplementation(GL.getCapabilities()));
 
     private static final class VaoGL3 implements VaoFunctions {
 
