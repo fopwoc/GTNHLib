@@ -20,5 +20,4 @@ Only part of this repository is compiled:
 
 Everything else is upstream code that is never built here and is left as it is.
 
-The `pz` branch merges [GTNewHorizons/GTNHLib](https://github.com/GTNewHorizons/GTNHLib) at the version the Angelica
-fork uses. Original source notices and the [LGPL v3 license](LICENSE.txt) remain in force.
+Original source notices and the [LGPL v3 license](LICENSE.txt) remain in force.
